@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import ShowHide from './component/showhide';
+import Payments from './component/payment';
+import ViewPayment from './component/viewPayment';
+import Test from './component/test'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div>
+    //   {/* <ShowHide/> */}
+    //   <Payments/>
+    // </div>
+
+  <Router>
+    <Route exact path="/" component={Payments} />
+    <Route path="/view" component={ViewPayment}/>
+    {/* <Route path="/edit/:id" component={EditItem} /> */}
+  </Router>
   );
 }
 
 export default App;
+
